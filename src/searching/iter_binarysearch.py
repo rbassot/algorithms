@@ -26,10 +26,12 @@ def iter_binarysearch(sorted_list, value):
 
         #check the left partition; ignore it if the value isn't found there by adjusting the bound
         if sorted_list[mid] < value:
+            #value is in the upper half partition; update lower bound
             low = mid + 1
 
         #check the right partition
         elif sorted_list[mid] > value:
+            #value is in the lower half partition; update upper bound
             high = mid - 1
 
         #otherwise we know that mid is exactly the index where the value is found

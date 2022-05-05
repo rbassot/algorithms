@@ -16,18 +16,19 @@ def insertionsort(input_list):
     '''
 
     #iterate through the list from the start, and maintain a sorted sub-list of elements
-    for i in range(len(input_list)):
+    for i in range(0, len(input_list)):
 
         #select a value to be inserted into the sub-list
         j = i
         value = input_list[j]
 
-        #shuffle sorted sub-list elements to the left until the value's correct slot is open 
-        while j > 0 and input_list[j] > value:
+        #shuffle sorted sub-list elements that are greater than 'value' to the right, until the value's
+        #correct sorted slot is found
+        while j > 0 and input_list[j-1] > value:
             input_list[j] = input_list[j-1]
             j = j - 1
 
-        #insert the value into the sorted location into the sub-list
+        #insert the value into the sorted location in the sub-list
         input_list[j] = value
 
-    return input_list
+    return
